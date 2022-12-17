@@ -1,0 +1,4 @@
+﻿  keydance.cpp
+C:\Users\user\Documents\GitHub\keydance\keydance.cpp(22,9): warning C4101: 'prefix': unreferenced local variable
+C:\Users\user\Documents\GitHub\keydance\keydance.cpp(46): warning C4715: 'keyInput': not all control paths return a value
+  keydance.vcxproj -> C:\Users\user\Documents\GitHub\keydance\Debug\keydance.exe
