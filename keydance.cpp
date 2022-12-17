@@ -89,7 +89,7 @@ int gameStart() {
         std::cout << "\n";
         Sleep(300);
 
-        //system("cls");
+        system("cls");
     }
     return 0;
 }
