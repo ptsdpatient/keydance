@@ -37,13 +37,13 @@ int musicPlayer() {
     return 0;
 }
 
-char keyInput() {
-    cin >> input;
+/*char keyInput() {
     //cout << input;
     //if (key == 'q') { gameOver = true; }
     //if (gameOver) exit(3);
+    
     return input;
-}
+}*/
 
 
 int gameStart() {
@@ -85,27 +85,29 @@ int gameStart() {
 
         char keyDisplayList[4] = { 'z','x','c','v' };
         for (char kd : keyDisplayList) std::cout << " [" << kd << "]";
-        std::cout << "\t\t score: " << score << "\t input: " << key <<input<< endl;
+        std::cout << "\t\t score: " << score << "\t input: " << input<< endl;
         for (int i = 0; i < 10; i++) std::cout << " [" << z[i] << "] [" << x[i] << "] [" << c[i] << "] [" << v[i] << "] " << endl;
         std::cout << "\n";
+        if (_kbhit()) { input = _getch(); }
+        else input = ' ';
         if ((z[0] == '*' && input=='z') || (x[0] == '*' && input=='x') || (c[0] == '*' && input=='c') || (v[0] == '*' && input=='v')) { score += 100; }
        
         Sleep(300);
 
-       //system("cls");
+       system("cls");
     }
     return 0;
 }
-int recursionFunction() {
+/*int recursionFunction() {
 
     future<char> asyncFunction = async(keyInput);
     key = asyncFunction.get();
     cout << key;
     return recursionFunction();
-}
+}*/
 int main() {
     musicPlayer();
-    future<int> asyncFunction2 = async(recursionFunction);
+    //future<int> asyncFunction2 = async(recursionFunction);
     gameStart();
     return 0;
 }

@@ -1,4 +1,3 @@
 ﻿  keydance.cpp
 C:\Users\user\Documents\GitHub\keydance\keydance.cpp(23,9): warning C4101: 'prefix': unreferenced local variable
-C:\Users\user\Documents\GitHub\keydance\keydance.cpp(104): warning C4717: 'recursionFunction': recursive on all control paths, function will cause runtime stack overflow
   keydance.vcxproj -> C:\Users\user\Documents\GitHub\keydance\Debug\keydance.exe
