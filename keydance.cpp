@@ -5,7 +5,8 @@
 #include <string>
 #include <map>
 #include <future>
-char input;
+char input='z';
+char key='z';
 bool gameOver = false;
 int score = 0;
 using namespace std;
@@ -36,13 +37,12 @@ int musicPlayer() {
     return 0;
 }
 
-char keyInput(char key) {
-    cin >> key;
-    input = key;
-    cout << input;
+char keyInput(char input) {
+    cin >> input;
+    //cout << input;
     //if (key == 'q') { gameOver = true; }
     if (gameOver) exit(3);
-    keyInput('a');
+    return input;
 }
 
 
@@ -54,7 +54,8 @@ int gameStart() {
     char v[21];
     while (!gameOver) {
 
-
+        
+        
         for (int i = 0; i < 20; i++) {
 
             if (z[i] != '*') { z[i] = ' '; }
@@ -84,19 +85,25 @@ int gameStart() {
 
         char keyDisplayList[4] = { 'z','x','c','v' };
         for (char kd : keyDisplayList) std::cout << " [" << kd << "]";
-        std::cout << "\t\t score: " << score << endl;
+        std::cout << "\t\t score: " << score << "\t input: " << key << endl;
         for (int i = 0; i < 10; i++) std::cout << " [" << z[i] << "] [" << x[i] << "] [" << c[i] << "] [" << v[i] << "] " << endl;
         std::cout << "\n";
+        if ((z[0] == '*' && input=='z') || (x[0] == '*' && input=='x') || (c[0] == '*' && input=='c') || (v[0] == '*' && input=='v')) { score += 100; }
+       
         Sleep(300);
 
-        system("cls");
+       system("cls");
     }
     return 0;
 }
-
+int recursionFunction() {
+    future<char> asyncFunction = async(keyInput, input);
+    key = asyncFunction.get();
+    return recursionFunction();
+}
 int main() {
     musicPlayer();
-    future<char> asyncFunction = async(keyInput, 'a');
+    future<int> asyncFunction2 = async(recursionFunction);
     gameStart();
     return 0;
 }
