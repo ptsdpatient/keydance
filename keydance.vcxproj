@@ -142,6 +142,17 @@
   <ItemGroup>
     <ClCompile Include="keydance.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="keydance.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Desktop\download.ico" />
+    <Image Include="..\..\..\desktop\icon2.ico" />
+    <Image Include="..\..\..\desktop\icon3.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
